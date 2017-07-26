@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            display: none;
+        }
+        
+        .cur {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#">one</a>
+            <div>
+                <p>123143445</p>
+                <p>123143445</p>
+                <p>123143445</p>
+            </div>
+        </li>
+        <li>
+            <a href="#">two</a>
+            <div>
+                <p>123234145</p>
+                <p>123234145</p>
+                <p>123234145</p>
+            </div>
+        </li>
+        <li>
+            <a href="#">three</a>
+            <div>
+                <p>123234145</p>
+                <p>123234145</p>
+                <p>123234145</p>
+            </div>
+        </li>
+        <li>
+            <a href="#">four</a>
+            <div>
+                <p>123234145</p>
+                <p>123234145</p>
+                <p>123234145</p>
+            </div>
+        </li>
+    </ul>
+</body>
+<script src="jquery-3.0.0.min.js"></script>
+<script>
+    $(function() {
+        $('a').on('click', function() {
+
+            //当div内有cur时
+            if ($(this).next().hasClass('cur')) {
+                $(this).next().removeClass('cur');
+            } else {
+                //当div内没有cur时
+                $(this).next().addClass("cur").parent().siblings().find("div").removeClass('cur');
+            }
+        })
+    })
+</script>
+
+</html>
